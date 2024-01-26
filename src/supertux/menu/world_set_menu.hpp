@@ -22,6 +22,7 @@
 enum WorldSetMenuIDs
 {
   WORLDSET_STORY,
+  WORLDSET_STORY1,
   WORLDSET_CONTRIB
 };
 
