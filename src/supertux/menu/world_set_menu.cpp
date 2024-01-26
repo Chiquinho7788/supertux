@@ -29,6 +29,7 @@ WorldSetMenu::WorldSetMenu()
    add_hl();
    add_entry(WORLDSET_STORY, _("Story Mode"));
    add_entry(WORLDSET_CONTRIB, _("Contrib Levels"));
+   add_entry(WORLDSET_STORY1, _("Niveis do kiko"));
    add_hl();
    add_back(_("Back"));
 }
@@ -39,7 +40,13 @@ void WorldSetMenu::menu_action(MenuItem& item)
   {
     case WORLDSET_STORY:
     {
-      std::unique_ptr<World> world = World::from_directory("levels/world1");
+      std::unique_ptr<World> world = World::from_directory("levels/test");
+      GameManager::current()->start_worldmap(*world);
+      break;
+    }
+    case WORLDSET_STORY1:
+    {
+      std::unique_ptr<World> world = World::from_directory("levels/niveis_do_kiko");
       GameManager::current()->start_worldmap(*world);
       break;
     }
